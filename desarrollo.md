@@ -1,4 +1,4 @@
-## CacinHub API 
+# CacinHub API 
 API REST de casino desarrollada en Python
 ## Descripción
 CacinHub es una API que simula un sistema de casino donde los usuarios pueden:
