@@ -1,7 +1,9 @@
 from funciones import *
-
-def test_datos_correctos():
-    pass
+import pytest
+def test_creacion_usuario():
+    data = "./base_data./users.json"
+    try:
+        with open(data, "r" encoding="utf-8" as f):
 
 def test_nombres_no_duplicados():
     pass
