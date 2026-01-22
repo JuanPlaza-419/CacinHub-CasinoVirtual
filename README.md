@@ -123,7 +123,7 @@ Recibe: Nada
 Devuelve: Lista con nombre, reglas y apuesta mínima de cada juego
 Puede fallar si: (no aplica)
 
-### Tests
+### TestsE
 #### * Test 1: Verificar que devuelve todos los juegos
 
 Qué hace: Comprueba que se obtienen todos los juegos registrados
