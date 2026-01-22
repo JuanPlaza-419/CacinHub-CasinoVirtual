@@ -1,7 +1,9 @@
 from funciones import *
 import pytest
 def test_creacion_usuario():
-    data = "./base_data./users.json"
+    data = "./users.json"
+    usuario = crear_usuario("TestUser", "pass123", 100)
+    user_id = usuario["id"]
     try:
         with open(data, "r", encoding="utf-8") as f:
             data = json.load(f)
@@ -12,12 +14,14 @@ def test_creacion_usuario():
     except ValueError:
         return cargar_datos()
 
-
-print(test_creacion_usuario())
 def test_nombres_no_duplicados():
-    pass
-
-def test_saldo_minimo():
+    data = "./users.json"
+    for datos in data["users"]:
+        if datos["nombre"].values == data["nombre"]:
+            assert datos["nombre"].values in consultar_usuario()
+            return "Ya existe"
+        else:
+            return crear_datos() 
     pass
 
 # ----------------------

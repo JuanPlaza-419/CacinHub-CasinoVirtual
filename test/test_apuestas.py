@@ -1,13 +1,17 @@
 from funciones import *
 import pytest
 import json
-data = "./base_data./users.json"
+data = "./users.json"
+historial = "./historial.json"
 def test_verificar_apuesta():
-    try: 
-        with open(data, "r", encoding="utf-8") as f:
-            data = json.load(f)
-            apuesta = None
-            if data["saldo"] 
+    payload = data["id", "saldo"]
+    juego = juegos["ruleta"]
+        
+    assert "resultado" in historial
+    assert historial["resultado"] in ["gano", "perdio"]
+    assert "ganancia" in data
+    assert isinstance(data["ganancia"], (int, float))
+            
 
 
 def test_actualizacion_de_saldo():
