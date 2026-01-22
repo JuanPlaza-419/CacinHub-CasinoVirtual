@@ -46,7 +46,7 @@ def test_rechazo_deposito_cero():
 
         deposito = 0.0
 
-    assert deposito > 0, "No se debe permitir un depósito de 0"
+        assert deposito > 0, "No se debe permitir un depósito de 0"
 
 # No se permiten valores negativos ni en saldo ni en depósitos
 def test_no_numeros_negativos():
