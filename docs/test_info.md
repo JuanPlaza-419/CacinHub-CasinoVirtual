@@ -70,7 +70,9 @@ test_name: test_consultar_usuario_inexistente
 - Devuelve: Error indicando que la cantidad debe ser positiva
 - Debe pasar si: El sistema rechaza correctamente valores negativos
 
-### Test Gestion de jeugos 
+## Test Gestion de jeugos 
+
+### Test listar juegos 
 
 1. checklist de juegos 
 
