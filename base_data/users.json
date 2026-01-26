@@ -2,14 +2,14 @@
     "6150": {
         "nombre": "Angelico",
         "contrasena": "123",
-        "fichas": 100,
+        "fichas": 112,
         "fecha_registro": "Mon Jan 26 05:04:08 2026",
         "stats": {
-            "partidas_totales": 2,
+            "partidas_totales": 3,
             "dados": 1,
             "ruleta": 0,
             "tragamonedas": 0,
-            "carreras": 1
+            "carreras": 2
         }
     },
     "9710": {

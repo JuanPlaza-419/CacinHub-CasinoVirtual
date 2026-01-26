@@ -16,7 +16,7 @@ def guardar_datos(datos):
 
 def menu_juegos(usuarios, uid):
     while True:
-        print(f"\n--- CASINO (ID: {uid} | Fichas: {usuarios[uid]['fichas']}) ---")
+        print(f"\n--- CASINO CANCINHUB (ID: {uid} | Fichas: {usuarios[uid]['fichas']}) ---")
         print("1. Dados (x2)")
         print("2. Carreras (Variable)")
         print("3. Cerrar Sesión")
@@ -32,8 +32,10 @@ def menu_juegos(usuarios, uid):
 def main():
     usuarios = cargar_datos()
     while True:
-        print("\n=== SISTEMA DE APUESTAS ===")
-        print("1. Crear Cuenta | 2. Entrar | 3. Salir")
+        print("\n=== CACINHUB ===")
+        print("1. Crear Cuenta")
+        print("2. Entrar")
+        print("3. Salir")
         op = input("> ")
         
         if op == "1":
