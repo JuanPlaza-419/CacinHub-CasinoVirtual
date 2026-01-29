@@ -1,6 +1,6 @@
-from funcionesprueba import *
+from funciones import *
 import pytest
-
+import json
 
 # ----------------------
 # TEST CREACION USUARIO
