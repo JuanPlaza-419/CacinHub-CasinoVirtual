@@ -2,6 +2,12 @@ from Funciones.funciones import *
 import pytest
 import json
 
+
+@pytest.fixture
+def usuarios_db_limpio():
+    """Proporciona una base de datos de usuarios vacía para cada test"""
+    return {}
+
 # ==============================
 # TESTS DE CREACIÓN DE USUARIO
 # ==============================
@@ -197,9 +203,22 @@ def test_validacion_apuesta_mayor_que_cero():
     assert not (apuesta_invalida_cero > 0), "Apuesta de 0 no debe ser válida"
     assert not (apuesta_invalida_negativa > 0), "Apuestas negativas no deben ser válidas"
 
-# ==============================
+
+def test_no_fichas_negativas_recomendacion():
+
+    
+    usuarios_db = {}
+    usuarios_db = crear_usuario(usuarios_db, "TestUser", "pass123")
+    user_id = list(usuarios_db.keys())[0]
+    
+    # Las fichas siempre deben ser >= 0
+    fichas = usuarios_db[user_id]["fichas"]
+    assert fichas >= 0, "Las fichas no pueden ser negativas"
+
+
+# =====================================================
 # TESTS DE ESTADÍSTICAS
-# ==============================
+# =====================================================
 
 def test_stats_iniciales(usuarios_db_limpio):
     """Verifica que las estadísticas iniciales son correctas"""
