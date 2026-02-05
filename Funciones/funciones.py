@@ -54,7 +54,6 @@ def gestionar_apuesta(usuarios_db, usuario_id, monto, juego, gano, multiplicador
 # ----------------
 # Historial
 # ---------------
-
 def cargar_usuarios():
     # Carga users.json
     with open("base_data/users.json", "r", encoding="utf-8") as f:

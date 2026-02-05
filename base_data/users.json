@@ -24,5 +24,18 @@
             "tragamonedas": 0,
             "carreras": 1
         }
+    },
+    "8865": {
+        "nombre": "Tanana",
+        "contrasena": "1234",
+        "fichas": 0,
+        "fecha_registro": "Wed Feb  4 13:14:05 2026",
+        "stats": {
+            "partidas_totales": 2,
+            "dados": 1,
+            "ruleta": 0,
+            "tragamonedas": 0,
+            "carreras": 1
+        }
     }
 }
