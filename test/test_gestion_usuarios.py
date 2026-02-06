@@ -12,8 +12,7 @@ def usuarios_db_limpio():
 @pytest.fixture
 def usuarios_db_con_usuario():
     """
-    Proporciona una base de datos con un usuario ya creado manualmente
-    Para evitar llamar a crear_usuario() que usa input()
+   Genera el usuario
     """
     usuario_test = Usuario("TestUser", "pass123", "01/01/2000", id_usuario="1234")
     return {"1234": usuario_test.to_dict()}
@@ -24,7 +23,7 @@ def usuarios_db_con_usuario():
 # =====================================================
 
 def test_iniciar_sesion_exitoso(usuarios_db_con_usuario):
-    """Verifica que se puede iniciar sesión con credenciales correctas"""
+    """Verifica que se puede iniciar sesión"""
     usuarios_db = usuarios_db_con_usuario
     
     resultado = iniciar_sesion(usuarios_db, "1234", "pass123")
@@ -45,7 +44,7 @@ def test_iniciar_sesion_usuario_inexistente(usuarios_db_limpio):
     """Verifica que falla al intentar iniciar sesión con un ID que no existe"""
     usuarios_db = usuarios_db_limpio
     
-    resultado = iniciar_sesion(usuarios_db, "9999", "anypassword")
+    resultado = iniciar_sesion(usuarios_db, "9999", "malapassword")
     
     assert resultado == False, "No debe permitir inicio de sesión con ID inexistente"
 
