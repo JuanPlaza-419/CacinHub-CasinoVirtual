@@ -1,4 +1,4 @@
-import json
+import json, pytest
 from Funciones.funciones import *
 
 # Ruta del archivo JSON
