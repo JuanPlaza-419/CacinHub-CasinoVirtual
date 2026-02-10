@@ -58,34 +58,54 @@
         "usuario": "jacobo",
         "partidas": [
             {
-                "fecha": "06/02/2026 11:51:31",
-                "juego": "banco",
-                "apuesta": 0,
-                "detalles": "Retiro de fondos bancarios",
-                "resultado": "gano",
-                "ganancia": 190,
-                "fichas_antes": 190,
-                "fichas_despues": 380
+                "fecha": "10/02/2026 13:11:07",
+                "juego": "ruleta",
+                "apuesta": 100,
+                "detalles": "Sin detalles",
+                "resultado": "perdio",
+                "ganancia": 100,
+                "fichas_antes": 202,
+                "fichas_despues": 102
             },
             {
-                "fecha": "06/02/2026 11:50:40",
+                "fecha": "10/02/2026 13:10:52",
+                "juego": "ruleta",
+                "apuesta": 200,
+                "detalles": "Sin detalles",
+                "resultado": "perdio",
+                "ganancia": 200,
+                "fichas_antes": 402,
+                "fichas_despues": 202
+            },
+            {
+                "fecha": "10/02/2026 13:09:55",
+                "juego": "ruleta",
+                "apuesta": 20,
+                "detalles": "Sin detalles",
+                "resultado": "perdio",
+                "ganancia": 20,
+                "fichas_antes": 422,
+                "fichas_despues": 402
+            },
+            {
+                "fecha": "10/02/2026 13:08:45",
                 "juego": "dados",
-                "apuesta": 90,
+                "apuesta": 20,
                 "detalles": "Empate tecnico",
                 "resultado": "empate",
                 "ganancia": 0,
-                "fichas_antes": 100,
-                "fichas_despues": 190
+                "fichas_antes": 422,
+                "fichas_despues": 422
             },
             {
-                "fecha": "06/02/2026 11:50:00",
+                "fecha": "10/02/2026 13:08:35",
                 "juego": "dados",
-                "apuesta": 15,
-                "detalles": "Jugador: 1 vs Banca: 5",
-                "resultado": "perdio",
-                "ganancia": 15,
-                "fichas_antes": 100,
-                "fichas_despues": 100
+                "apuesta": 20,
+                "detalles": "Empate tecnico",
+                "resultado": "empate",
+                "ganancia": 0,
+                "fichas_antes": 422,
+                "fichas_despues": 422
             }
         ]
     }
