@@ -58,34 +58,54 @@
         "usuario": "jacobo",
         "partidas": [
             {
-                "fecha": "06/02/2026 11:51:31",
-                "juego": "banco",
-                "apuesta": 0,
-                "detalles": "Retiro de fondos bancarios",
+                "fecha": "11/02/2026 14:02:08",
+                "juego": "dados",
+                "apuesta": 10,
+                "detalles": "Sin detalles",
                 "resultado": "gano",
-                "ganancia": 190,
-                "fichas_antes": 190,
-                "fichas_despues": 380
+                "ganancia": 290,
+                "fichas_antes": 1003890,
+                "fichas_despues": 1004180
             },
             {
-                "fecha": "06/02/2026 11:50:40",
+                "fecha": "11/02/2026 14:02:05",
                 "juego": "dados",
-                "apuesta": 90,
-                "detalles": "Empate tecnico",
-                "resultado": "empate",
-                "ganancia": 0,
-                "fichas_antes": 100,
-                "fichas_despues": 190
-            },
-            {
-                "fecha": "06/02/2026 11:50:00",
-                "juego": "dados",
-                "apuesta": 15,
-                "detalles": "Jugador: 1 vs Banca: 5",
+                "apuesta": 10,
+                "detalles": "Sin detalles",
                 "resultado": "perdio",
-                "ganancia": 15,
-                "fichas_antes": 100,
-                "fichas_despues": 100
+                "ganancia": 10,
+                "fichas_antes": 1003900,
+                "fichas_despues": 1003890
+            },
+            {
+                "fecha": "11/02/2026 14:02:03",
+                "juego": "dados",
+                "apuesta": 10,
+                "detalles": "Sin detalles",
+                "resultado": "perdio",
+                "ganancia": 10,
+                "fichas_antes": 1003910,
+                "fichas_despues": 1003900
+            },
+            {
+                "fecha": "11/02/2026 14:02:02",
+                "juego": "dados",
+                "apuesta": 10,
+                "detalles": "Sin detalles",
+                "resultado": "perdio",
+                "ganancia": 10,
+                "fichas_antes": 1003920,
+                "fichas_despues": 1003910
+            },
+            {
+                "fecha": "11/02/2026 14:02:00",
+                "juego": "dados",
+                "apuesta": 10,
+                "detalles": "Sin detalles",
+                "resultado": "perdio",
+                "ganancia": 10,
+                "fichas_antes": 1003930,
+                "fichas_despues": 1003920
             }
         ]
     }
