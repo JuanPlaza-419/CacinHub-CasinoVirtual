@@ -58,54 +58,54 @@
         "usuario": "jacobo",
         "partidas": [
             {
-                "fecha": "10/02/2026 13:11:07",
-                "juego": "ruleta",
-                "apuesta": 100,
-                "detalles": "Sin detalles",
-                "resultado": "perdio",
-                "ganancia": 100,
-                "fichas_antes": 202,
-                "fichas_despues": 102
-            },
-            {
-                "fecha": "10/02/2026 13:10:52",
-                "juego": "ruleta",
-                "apuesta": 200,
-                "detalles": "Sin detalles",
-                "resultado": "perdio",
-                "ganancia": 200,
-                "fichas_antes": 402,
-                "fichas_despues": 202
-            },
-            {
-                "fecha": "10/02/2026 13:09:55",
-                "juego": "ruleta",
-                "apuesta": 20,
-                "detalles": "Sin detalles",
-                "resultado": "perdio",
-                "ganancia": 20,
-                "fichas_antes": 422,
-                "fichas_despues": 402
-            },
-            {
-                "fecha": "10/02/2026 13:08:45",
+                "fecha": "11/02/2026 14:02:08",
                 "juego": "dados",
-                "apuesta": 20,
-                "detalles": "Empate tecnico",
-                "resultado": "empate",
-                "ganancia": 0,
-                "fichas_antes": 422,
-                "fichas_despues": 422
+                "apuesta": 10,
+                "detalles": "Sin detalles",
+                "resultado": "gano",
+                "ganancia": 290,
+                "fichas_antes": 1003890,
+                "fichas_despues": 1004180
             },
             {
-                "fecha": "10/02/2026 13:08:35",
+                "fecha": "11/02/2026 14:02:05",
                 "juego": "dados",
-                "apuesta": 20,
-                "detalles": "Empate tecnico",
-                "resultado": "empate",
-                "ganancia": 0,
-                "fichas_antes": 422,
-                "fichas_despues": 422
+                "apuesta": 10,
+                "detalles": "Sin detalles",
+                "resultado": "perdio",
+                "ganancia": 10,
+                "fichas_antes": 1003900,
+                "fichas_despues": 1003890
+            },
+            {
+                "fecha": "11/02/2026 14:02:03",
+                "juego": "dados",
+                "apuesta": 10,
+                "detalles": "Sin detalles",
+                "resultado": "perdio",
+                "ganancia": 10,
+                "fichas_antes": 1003910,
+                "fichas_despues": 1003900
+            },
+            {
+                "fecha": "11/02/2026 14:02:02",
+                "juego": "dados",
+                "apuesta": 10,
+                "detalles": "Sin detalles",
+                "resultado": "perdio",
+                "ganancia": 10,
+                "fichas_antes": 1003920,
+                "fichas_despues": 1003910
+            },
+            {
+                "fecha": "11/02/2026 14:02:00",
+                "juego": "dados",
+                "apuesta": 10,
+                "detalles": "Sin detalles",
+                "resultado": "perdio",
+                "ganancia": 10,
+                "fichas_antes": 1003930,
+                "fichas_despues": 1003920
             }
         ]
     }
