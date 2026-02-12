@@ -2,16 +2,16 @@ import random
 from juegos.base_juegos import *
 
 class JuegoTragaMonedasAPI(Juego):
-    def init(self, usuarios, uid, gestionar_apuesta, guardar_datos):
-        super().init("tragamonedas", usuarios, uid, gestionar_apuesta, guardar_datos)
+    def __init__(self, usuarios, uid, gestionar_apuesta, guardar_datos):
+        super().__init__("tragamonedas", usuarios, uid, gestionar_apuesta, guardar_datos)
 
-    def ejecutarlogica(self, apuesta):
+    def ejecutar_logica(self, apuesta):
         if apuesta > 10:
             return {"error": "APUESTA MUY ELEVADA", "limite": 10}
 
-        casillas = [random.randint(0, 7) in range(3)]
+        casillas = [random.randint(0, 7) for _ in range(3)]
         casilla1, casilla2, casilla3 = casillas
-
+        
         gana = (casilla1 == casilla2 == casilla3)
         multiplicador = 0
         detalles = ""
