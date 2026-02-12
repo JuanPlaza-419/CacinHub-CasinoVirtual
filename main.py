@@ -4,8 +4,8 @@ from Funciones.historial import cargar_json, guardar_json, obtener_historial_usu
 from Funciones.banco import ejecutar_banco
 from juegos.carreras import JuegoCarreras 
 from juegos.dados import JuegoDados
-from juegos.ruleta import JuegoRuleta
-from juegos.traga_monedas import JuegoTraga_monedas
+from juegos.ruleta_api import JuegoRuletaAPI
+from juegos.traga_monedas_api import JuegoTragaMonedasAPI
 
 DB_PATH = "base_data/users.json"
 
@@ -33,10 +33,10 @@ def menu_seleccion_juegos(usuarios, uid):
             juego = JuegoCarreras(usuarios, uid, gestionar_apuesta, guardar_datos_casino)
             juego.jugar()
         elif op_juego == "3":
-            juego = JuegoRuleta(usuarios, uid, gestionar_apuesta, guardar_datos_casino)
+            juego = JuegoRuletaAPI(usuarios, uid, gestionar_apuesta, guardar_datos_casino)
             juego.jugar()
         elif op_juego =="4":
-            juego = JuegoTraga_monedas(usuarios, uid, gestionar_apuesta, guardar_datos_casino)
+            juego = JuegoTragaMonedasAPI(usuarios, uid, gestionar_apuesta, guardar_datos_casino)
             juego.jugar()
         elif op_juego =="5":
             break
