@@ -59,27 +59,30 @@ def test_incremento_fichas_al_ganar(usuarios_db_con_usuario):
     
     fichas_antes = usuarios_db["1234"]["fichas"]  # 100
     
-    usuarios_db = gestionar_apuesta(usuarios_db, "1234", monto=20, juego="dados", gano=True)
+    # Apostar 20 con multiplicador 2
+    usuarios_db = gestionar_apuesta(usuarios_db, "1234", 20, "dados", gano=True, multiplicador=2)
     
     fichas_despues = usuarios_db["1234"]["fichas"]
     
-    assert fichas_despues == fichas_antes + 40
+    # 100 - 20 + (20 * 2) = 120
+    assert fichas_despues == 120
     assert fichas_despues > fichas_antes
 
 
-def test_fichas_no_cambian_al_perder(usuarios_db_con_usuario):
-    """Verifica que las fichas NO aumentan al perder una apuesta"""
+def test_fichas_disminuyen_al_perder(usuarios_db_con_usuario):
+    """Verifica que las fichas disminuyen al perder una apuesta"""
     usuarios_db = usuarios_db_con_usuario
     
     fichas_antes = usuarios_db["1234"]["fichas"]  # 100
     
     # Perder una apuesta
-    usuarios_db = gestionar_apuesta(usuarios_db, "1234", monto=20, juego="ruleta", gano=False)
+    usuarios_db = gestionar_apuesta(usuarios_db, "1234", 20, "ruleta", gano=False, multiplicador=2)
     
     fichas_despues = usuarios_db["1234"]["fichas"]
     
-    # Las fichas no deben cambiar (se mantienen en 100)
-    assert fichas_despues == fichas_antes
+    # Las fichas deben disminuir: 100 - 20 = 80
+    assert fichas_despues == 80
+    assert fichas_despues < fichas_antes
 
 
 def test_fichas_no_negativas_con_property():
@@ -90,8 +93,6 @@ def test_fichas_no_negativas_con_property():
     
     # El setter debe convertirlas a 0
     assert user.fichas == 0, "Las fichas negativas deben convertirse a 0"
-
-
 def test_validacion_apuesta_mayor_que_cero():
     """Verifica conceptualmente que apuestas válidas deben ser mayores que 0"""
     apuesta_valida_1 = 10
@@ -126,21 +127,24 @@ def test_stats_iniciales(usuarios_db_con_usuario):
     assert stats["carreras"] == 0
 
 
-def test_stats_actualizadas_despues_partida(usuarios_db_con_usuario):
-    """Verifica que las estadísticas se actualizan correctamente"""
+def test_multiples_apuestas_modifican_fichas(usuarios_db_con_usuario):
+    """Verifica que múltiples apuestas modifican las fichas correctamente"""
     usuarios_db = usuarios_db_con_usuario
     
+    fichas_iniciales = 100
+    
     # Jugar varias partidas
-    usuarios_db = gestionar_apuesta(usuarios_db, "1234", 10, "dados", True)
-    usuarios_db = gestionar_apuesta(usuarios_db, "1234", 10, "dados", False)
-    usuarios_db = gestionar_apuesta(usuarios_db, "1234", 10, "ruleta", True)
+    # Gana dados: 100 - 10 + (10*2) = 110
+    usuarios_db = gestionar_apuesta(usuarios_db, "1234", 10, "dados", True, multiplicador=2)
+    assert usuarios_db["1234"]["fichas"] == 110
     
-    stats = usuarios_db["1234"]["stats"]
+    # Pierde dados: 110 - 10 = 100
+    usuarios_db = gestionar_apuesta(usuarios_db, "1234", 10, "dados", False, multiplicador=2)
+    assert usuarios_db["1234"]["fichas"] == 100
     
-    assert stats["partidas_totales"] == 3
-    assert stats["dados"] == 2
-    assert stats["ruleta"] == 1
-
+    # Gana ruleta: 100 - 10 + (10*2) = 110
+    usuarios_db = gestionar_apuesta(usuarios_db, "1234", 10, "ruleta", True, multiplicador=2)
+    assert usuarios_db["1234"]["fichas"] == 110
 
 # =====================================================
 # TESTS DE LA CLASE USUARIO

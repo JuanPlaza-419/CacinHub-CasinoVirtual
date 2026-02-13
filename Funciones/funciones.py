@@ -80,6 +80,13 @@ def iniciar_sesion(usuarios_db, usuario_id, contrasena):
     return False
 
 def gestionar_apuesta(usuarios, uid, monto_apuesta, juego, gano, multiplicador):
+    """Esta funcion obtiene un usuario, su uid, la cantidad apostada, resultado 
+    del juego y multiplicador. A partir de estos datos:
+    1.-Descuenta la cantidad apostada de lo que tenga el usuario
+    2.- En funcion de si ha ganado y el multiplicador anade la cantidad apostada por 
+    el multiplicador
+    3.- Si el usuario ha perdido no gana nada"""
+    
     uid = str(uid)
     
     usuarios[uid]["fichas"] -= monto_apuesta

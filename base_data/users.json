@@ -39,5 +39,19 @@
             "tragamonedas": 0,
             "carreras": 0
         }
+    },
+    "9363": {
+        "nombre": "prueba",
+        "contrasena": "1234",
+        "fecha_nacimiento": "24/02/1999",
+        "fichas": 100,
+        "fecha_registro": "13/02/2026 02:16:49",
+        "stats": {
+            "partidas_totales": 0,
+            "dados": 0,
+            "ruleta": 0,
+            "tragamonedas": 0,
+            "carreras": 0
+        }
     }
 }

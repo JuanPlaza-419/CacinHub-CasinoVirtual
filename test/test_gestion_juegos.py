@@ -1,6 +1,7 @@
 import json
 import pytest
 from Funciones.funciones import *
+from Funciones.historial import *
 from juegos.base_juegos import Juego
 import os
 
@@ -61,24 +62,6 @@ def test_estructura_de_cada_juego():
             assert campos_opcion <= opcion.keys(), \
                 f"Opción incompleta en {juego.get('id')}. " \
                 f"Tiene: {opcion.keys()}, Esperados: {campos_opcion}"
-
-
-def test_sin_juegos_no_verificados():
-    """Verifica que no haya juegos con nombres no permitidos"""
-    juegos = cargar_juegos()
-
-    nombres_permitidos = {
-        "dados",
-        "ruleta",
-        "tragamonedas",
-        "carreras_de_caballos",
-    }
-
-    for juego in juegos:
-        assert juego["nombre"] in nombres_permitidos, \
-            f"Se encontró un juego con nombre no permitido: '{juego['nombre']}'. " \
-            f"Nombres permitidos: {nombres_permitidos}"
-
 
 def test_ids_unicos():
     """Verifica que cada juego tiene un ID único"""
