@@ -53,5 +53,33 @@
             "tragamonedas": 0,
             "carreras": 0
         }
+    },
+    "8539": {
+        "nombre": "Manolin",
+        "contrasena": "123456",
+        "fecha_nacimiento": "24/10/1900",
+        "fichas": 100,
+        "fecha_registro": "13/02/2026 11:01:59",
+        "stats": {
+            "partidas_totales": 0,
+            "dados": 0,
+            "ruleta": 0,
+            "tragamonedas": 0,
+            "carreras": 0
+        }
+    },
+    "2499": {
+        "nombre": "Manolin",
+        "contrasena": "123456",
+        "fecha_nacimiento": "24/10/2000",
+        "fichas": 100,
+        "fecha_registro": "13/02/2026 11:02:16",
+        "stats": {
+            "partidas_totales": 0,
+            "dados": 0,
+            "ruleta": 0,
+            "tragamonedas": 0,
+            "carreras": 0
+        }
     }
 }

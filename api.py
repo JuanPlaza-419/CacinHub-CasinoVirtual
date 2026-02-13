@@ -2,6 +2,7 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import Optional
 import os
+import json
 
 from Funciones.historial import cargar_json, guardar_json, obtener_historial_usuario
 from Funciones.funciones import gestionar_apuesta
@@ -84,3 +85,98 @@ def api_tragamonedas(req: DatosApuesta):
         raise HTTPException(status_code=400, detail=resultado["error"])
         
     return resultado
+
+# ===========================================
+# ENDPOINT CREAR USUARIO
+# ==========================================
+from Funciones.funciones import Usuario, calcular_edad
+
+class CrearUsuarioRequest(BaseModel):
+    nombre: str
+    contrasena: str
+    fecha_nacimiento: str
+
+def cargar_usuarios():
+    """Carga usuarios desde JSON"""
+    archivo = "base_data/users.json"
+    if os.path.exists(archivo):
+        with open(archivo, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    return {}
+
+def guardar_usuarios(usuarios_db):
+    """Guarda usuarios en JSON"""
+    archivo = "base_data/users.json"
+    os.makedirs(os.path.dirname(archivo), exist_ok=True)
+    with open(archivo, 'w', encoding='utf-8') as f:
+        json.dump(usuarios_db, f, indent=4, ensure_ascii=False)
+
+
+
+
+@app.post("/api/usuarios")
+def crear_usuario_endpoint(usuario: CrearUsuarioRequest):
+    """Crear un nuevo usuario"""
+    
+    # Validaciones
+    if len(usuario.nombre.strip()) < 3:
+        return {
+            "success": False,
+            "message": "El nombre debe tener al menos 3 caracteres",
+            "data": None
+        }
+    
+    if len(usuario.contrasena) < 6:
+        return {
+            "success": False,
+            "message": "La contraseña debe tener al menos 6 caracteres",
+            "data": None
+        }
+    
+    # Validar edad
+    edad = calcular_edad(usuario.fecha_nacimiento)
+    
+    if edad is None:
+        return {
+            "success": False,
+            "message": "Formato de fecha no válido. Use DD/MM/YYYY",
+            "data": None
+        }
+    
+    if edad < 18:
+        return {
+            "success": False,
+            "message": f"Acceso denegado: Tienes {edad} años. Solo mayores de 18.",
+            "data": None
+        }
+    
+    # Cargar usuarios
+    usuarios_db = cargar_usuarios()
+    
+    # Crear usuario usando la clase original
+    while True:
+        nuevo_user = Usuario(
+            usuario.nombre.strip(),
+            usuario.contrasena,
+            usuario.fecha_nacimiento.strip()
+        )
+        if nuevo_user.id not in usuarios_db:
+            break
+    
+    # Guardar
+    usuarios_db[nuevo_user.id] = nuevo_user.to_dict()
+    guardar_usuarios(usuarios_db)
+    
+    # Respuesta
+    return {
+        "success": True,
+        "message": "Usuario creado exitosamente",
+        "data": {
+            "id": nuevo_user.id,
+            "nombre": nuevo_user.nombre,
+            "edad": edad,
+            "fichas": nuevo_user.fichas,
+            "fecha_nacimiento": nuevo_user.fecha_nacimiento,
+            "fecha_registro": nuevo_user.fecha_registro
+        }
+    }
