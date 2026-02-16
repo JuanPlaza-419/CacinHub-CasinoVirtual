@@ -81,5 +81,19 @@
             "tragamonedas": 0,
             "carreras": 0
         }
+    },
+    "3424": {
+        "nombre": "Janh",
+        "contrasena": "1234",
+        "fecha_nacimiento": "24/1/2000",
+        "fichas": 300,
+        "fecha_registro": "16/02/2026 01:12:07",
+        "stats": {
+            "partidas_totales": 0,
+            "dados": 0,
+            "ruleta": 0,
+            "tragamonedas": 0,
+            "carreras": 0
+        }
     }
 }

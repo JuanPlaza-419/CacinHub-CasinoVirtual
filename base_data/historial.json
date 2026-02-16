@@ -108,5 +108,30 @@
                 "fichas_despues": 1003920
             }
         ]
+    },
+    "3424": {
+        "usuario": "Janh",
+        "partidas": [
+            {
+                "fecha": "16/02/2026 01:29:11",
+                "juego": "banco",
+                "apuesta": 0,
+                "detalles": "Retiro de fondos bancarios",
+                "resultado": "gano",
+                "ganancia": 100,
+                "fichas_antes": 200,
+                "fichas_despues": 300
+            },
+            {
+                "fecha": "16/02/2026 01:12:38",
+                "juego": "banco",
+                "apuesta": 0,
+                "detalles": "Retiro de fondos bancarios",
+                "resultado": "gano",
+                "ganancia": 100,
+                "fichas_antes": 100,
+                "fichas_despues": 200
+            }
+        ]
     }
 }

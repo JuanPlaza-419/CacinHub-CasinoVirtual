@@ -180,3 +180,170 @@ def crear_usuario_endpoint(usuario: CrearUsuarioRequest):
             "fecha_registro": nuevo_user.fecha_registro
         }
     }
+    
+@app.get("/api/usuarios")
+def listar_usuarios():
+    """Obtener todos los usuarios (solo id y nombre)"""
+    
+    usuarios_db = cargar_usuarios()
+    
+    # Extraer solo id y nombre
+    usuarios_lista = []
+    for user_id, usuario in usuarios_db.items():
+        usuarios_lista.append({
+            "id": user_id,
+            "nombre": usuario["nombre"]
+        })
+    
+    return {
+        "success": True,
+        "count": len(usuarios_lista),
+        "data": usuarios_lista
+    }
+
+
+# =====================================================
+# ENDPOINT: OBTENER SALDO
+# =====================================================
+class AgregarFichasRequest(BaseModel):
+    user_id: str
+    contrasena: str
+    cantidad: int
+    
+@app.get("/api/usuarios/{user_id}/saldo")
+def obtener_saldo(user_id: str, contrasena: str):
+
+    usuarios = cargar_usuarios()
+    
+    # Verificar que el usuario existe
+    if user_id not in usuarios:
+        return {
+            "success": False,
+            "message": "Usuario no encontrado",
+            "data": None
+        }
+    
+    # Verificar contraseña
+    if usuarios[user_id]["contrasena"] != contrasena:
+        return {
+            "success": False,
+            "message": "Contraseña incorrecta",
+            "data": None
+        }
+    
+    usuario = usuarios[user_id]
+    
+    # Retornar saldo
+    return {
+        "success": True,
+        "message": "Saldo obtenido exitosamente",
+        "data": {
+            "user_id": user_id,
+            "nombre": usuario["nombre"],
+            "fichas": usuario["fichas"]
+        }
+    }
+
+
+@app.get("/api/usuarios/{user_id}/info")
+def obtener_info_completa(user_id: str, contrasena: str):
+    usuarios = cargar_usuarios()
+    
+    # Verificar que el usuario existe
+    if user_id not in usuarios:
+        return {
+            "success": False,
+            "message": "Usuario no encontrado",
+            "data": None
+        }
+    
+    # Verificar contraseña
+    if usuarios[user_id]["contrasena"] != contrasena:
+        return {
+            "success": False,
+            "message": "Contraseña incorrecta",
+            "data": None
+        }
+    
+    usuario = usuarios[user_id]
+    
+    # Retornar información completa
+    return {
+        "success": True,
+        "message": "Información obtenida exitosamente",
+        "data": {
+            "user_id": user_id,
+            "nombre": usuario["nombre"],
+            "fichas": usuario["fichas"],
+            "fecha_nacimiento": usuario.get("fecha_nacimiento", ""),
+            "fecha_registro": usuario.get("fecha_registro", ""),
+            "stats": usuario.get("stats", {})
+        }
+    }
+
+@app.post("/api/banco/agregar-fichas")
+def agregar_fichas_banco(request: AgregarFichasRequest):
+    
+    usuarios = cargar_usuarios()
+    
+    # Verificar que el usuario existe
+    if request.user_id not in usuarios:
+        return {
+            "success": False,
+            "message": "Usuario no encontrado",
+            "data": None
+        }
+    
+    # Verificar contraseña
+    if usuarios[request.user_id]["contrasena"] != request.contrasena:
+        return {
+            "success": False,
+            "message": "Contraseña incorrecta",
+            "data": None
+        }
+    
+    # Validar cantidad
+    if request.cantidad <= 0:
+        return {
+            "success": False,
+            "message": "La cantidad debe ser mayor a 0",
+            "data": None
+        }
+    
+    # Guardar fichas antes
+    fichas_antes = usuarios[request.user_id]["fichas"]
+    
+    # Agregar fichas
+    usuarios[request.user_id]["fichas"] += request.cantidad
+    fichas_despues = usuarios[request.user_id]["fichas"]
+    
+    # Registrar en historial
+    from Funciones.historial import registrar_partida
+    
+    registrar_partida(
+        user_id=request.user_id,
+        nombre=usuarios[request.user_id]["nombre"],
+        juego="banco",
+        apuesta=0,
+        detalles="Retiro de fondos bancarios",
+        resultado="gano",
+        ganancia=request.cantidad,
+        antes=fichas_antes,
+        despues=fichas_despues
+    )
+    
+    # Guardar usuarios
+    guardar_usuarios(usuarios)
+    
+    # Respuesta exitosa
+    return {
+        "success": True,
+        "message": f"Operación exitosa. Ahora tienes {fichas_despues} fichas",
+        "data": {
+            "user_id": request.user_id,
+            "nombre": usuarios[request.user_id]["nombre"],
+            "fichas_antes": fichas_antes,
+            "fichas_agregadas": request.cantidad,
+            "fichas_despues": fichas_despues
+        }
+    }
