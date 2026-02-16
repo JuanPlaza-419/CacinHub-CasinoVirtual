@@ -3,54 +3,54 @@
         "usuario": "Rompe-Aire",
         "partidas": [
             {
-                "fecha": "12/02/2026 13:25:15",
-                "juego": "dados",
-                "apuesta": 5,
-                "detalles": "Jugador: 3 vs Banca: 5",
-                "resultado": "perdio",
-                "ganancia": 5,
-                "fichas_antes": 347,
-                "fichas_despues": 342
-            },
-            {
-                "fecha": "12/02/2026 13:25:10",
-                "juego": "dados",
-                "apuesta": 5,
-                "detalles": "Jugador: 6 vs Banca: 5",
-                "resultado": "gano",
-                "ganancia": 5,
-                "fichas_antes": 342,
-                "fichas_despues": 347
-            },
-            {
-                "fecha": "12/02/2026 13:25:03",
-                "juego": "dados",
-                "apuesta": 5,
-                "detalles": "Jugador: 2 vs Banca: 5",
-                "resultado": "perdio",
-                "ganancia": 5,
-                "fichas_antes": 347,
-                "fichas_despues": 342
-            },
-            {
-                "fecha": "12/02/2026 13:24:35",
-                "juego": "dados",
-                "apuesta": 5,
-                "detalles": "Jugador: 2 vs Banca: 6",
-                "resultado": "perdio",
-                "ganancia": 5,
-                "fichas_antes": 352,
-                "fichas_despues": 347
-            },
-            {
-                "fecha": "09/02/2026 10:08:45",
+                "fecha": "16/02/2026 12:28:46",
                 "juego": "dados",
                 "apuesta": 1,
-                "detalles": "Empate tecnico",
-                "resultado": "empate",
-                "ganancia": 0,
-                "fichas_antes": 352,
-                "fichas_despues": 352
+                "detalles": "Sin detalles",
+                "resultado": "perdio",
+                "ganancia": 1,
+                "fichas_antes": 337,
+                "fichas_despues": 336
+            },
+            {
+                "fecha": "16/02/2026 12:28:15",
+                "juego": "ruleta",
+                "apuesta": 2,
+                "detalles": "Sin detalles",
+                "resultado": "perdio",
+                "ganancia": 2,
+                "fichas_antes": 339,
+                "fichas_despues": 337
+            },
+            {
+                "fecha": "16/02/2026 12:25:33",
+                "juego": "ruleta",
+                "apuesta": 1,
+                "detalles": "Sin detalles",
+                "resultado": "perdio",
+                "ganancia": 1,
+                "fichas_antes": 340,
+                "fichas_despues": 339
+            },
+            {
+                "fecha": "16/02/2026 12:25:10",
+                "juego": "ruleta",
+                "apuesta": 2,
+                "detalles": "Sin detalles",
+                "resultado": "perdio",
+                "ganancia": 2,
+                "fichas_antes": 342,
+                "fichas_despues": 340
+            },
+            {
+                "fecha": "16/02/2026 12:22:36",
+                "juego": "dados",
+                "apuesta": 1,
+                "detalles": "Jugador: 2 vs Banca: 4",
+                "resultado": "perdio",
+                "ganancia": 1,
+                "fichas_antes": 343,
+                "fichas_despues": 342
             }
         ]
     },
