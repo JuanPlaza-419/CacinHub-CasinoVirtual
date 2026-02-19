@@ -4,8 +4,109 @@
         "contrasena": "1234",
         "fichas": 90,
         "stats": {
+<<<<<<< HEAD
             "partidas_totales": 1,
             "tragamonedas": 1
+=======
+            "partidas_totales": 2,
+            "dados": 1,
+            "ruleta": 0,
+            "tragamonedas": 0,
+            "carreras": 1
+        }
+    },
+    "1245": {
+        "nombre": "jacobo",
+        "contrasena": "1234",
+        "fecha_nacimiento": "1/2/2000",
+        "fichas": 1004180,
+        "fecha_registro": "06/02/2026 11:47:41",
+        "stats": {
+            "partidas_totales": 2,
+            "dados": 2,
+            "ruleta": 0,
+            "tragamonedas": 0,
+            "carreras": 0
+        }
+    },
+    "9363": {
+        "nombre": "prueba",
+        "contrasena": "1234",
+        "fecha_nacimiento": "24/02/1999",
+        "fichas": 100,
+        "fecha_registro": "13/02/2026 02:16:49",
+        "stats": {
+            "partidas_totales": 0,
+            "dados": 0,
+            "ruleta": 0,
+            "tragamonedas": 0,
+            "carreras": 0
+        }
+    },
+    "8539": {
+        "nombre": "Manolin",
+        "contrasena": "123456",
+        "fecha_nacimiento": "24/10/1900",
+        "fichas": 100,
+        "fecha_registro": "13/02/2026 11:01:59",
+        "stats": {
+            "partidas_totales": 0,
+            "dados": 0,
+            "ruleta": 0,
+            "tragamonedas": 0,
+            "carreras": 0
+        }
+    },
+    "2499": {
+        "nombre": "Manolin",
+        "contrasena": "123456",
+        "fecha_nacimiento": "24/10/2000",
+        "fichas": 100,
+        "fecha_registro": "13/02/2026 11:02:16",
+        "stats": {
+            "partidas_totales": 0,
+            "dados": 0,
+            "ruleta": 0,
+            "tragamonedas": 0,
+            "carreras": 0
+        }
+    },
+    "3424": {
+        "nombre": "Janh",
+        "contrasena": "1234",
+        "fecha_nacimiento": "24/1/2000",
+        "fichas": 305,
+        "fecha_registro": "16/02/2026 01:12:07",
+        "stats": {
+            "partidas_totales": 0,
+            "dados": 0,
+            "ruleta": 0,
+            "tragamonedas": 0,
+            "carreras": 0
+        }
+    },
+<<<<<<< HEAD
+    "7826": {
+        "nombre": "edisson",
+        "contrasena": "1539",
+        "fecha_nacimiento": "07/07/1974",
+        "fichas": 30,
+        "fecha_registro": "16/02/2026 12:40:29",
+=======
+    "1398": {
+        "nombre": "dada",
+        "contrasena": "1234",
+        "fecha_nacimiento": "24/10/2000",
+        "fichas": 95,
+        "fecha_registro": "16/02/2026 12:13:59",
+>>>>>>> 4dcd96e9a0e86df9b76c523a4177b8f2dcb1478e
+        "stats": {
+            "partidas_totales": 0,
+            "dados": 0,
+            "ruleta": 0,
+            "tragamonedas": 0,
+            "carreras": 0
+>>>>>>> e26fcfd95a07f7ba10e6ca9d72f6ab60155a6d09
         }
     }
 }
