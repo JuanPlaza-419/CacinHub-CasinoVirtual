@@ -169,13 +169,13 @@ class TestRuleta:
         r = client.post("/jugar/ruleta", json={"user_id": "USR001", "monto": 100, "tipo_apuesta": "1", "numero": 0})
         assert r.status_code == 200
 
-    def test_pleno_sin_numero(self, monkeypatch, un_usuario, juegos_falsos):
+    def test_pleno_sin_numero(self, monkeypatch, un_usuario):
         usar_db(monkeypatch, un_usuario)
         r = client.post("/jugar/ruleta", json={"user_id": "USR001", "monto": 100, "tipo_apuesta": "1"})
         assert r.status_code == 400
 
     @pytest.mark.parametrize("numero", [-1, 37, 100])
-    def test_pleno_numero_fuera_de_rango(self, monkeypatch, un_usuario, juegos_falsos, numero):
+    def test_pleno_numero_fuera_de_rango(self, monkeypatch, un_usuario, numero):
         usar_db(monkeypatch, un_usuario)
         r = client.post("/jugar/ruleta", json={"user_id": "USR001", "monto": 100, "tipo_apuesta": "1", "numero": numero})
         assert r.status_code == 400
@@ -458,13 +458,3 @@ class TestAgregarFichas:
         usar_db(monkeypatch, un_usuario)
         r = client.post(self.URL, json=self.payload(50))
         assert r.json()["data"]["nombre"] == "Juan Test"
-
-
-
-
-
-
-
-
-
-

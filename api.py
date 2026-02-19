@@ -1,11 +1,10 @@
 from fastapi import FastAPI, HTTPException, Query
 from pydantic import BaseModel
 from typing import Optional
-import os
-import json
 
 from Funciones.historial import cargar_json, guardar_json, obtener_historial_usuario
 from Funciones.funciones import gestionar_apuesta
+from Funciones.gacha import GachaChistes
 
 from juegos.dados_api import JuegoDadosAPI
 from juegos.carreras_api import JuegoCarrerasAPI
@@ -114,8 +113,11 @@ def api_carreras(req: DatosApuesta):
     usuarios = cargar_json(DB_PATH)
     if req.user_id not in usuarios:
         raise HTTPException(status_code=404, detail="Usuario no encontrado")
-
+    if req.monto > usuarios[req.user_id]["fichas"]:
+        raise HTTPException(status_code=400, detail="Fichas insuficientes")
+        
     juego = JuegoCarrerasAPI(usuarios, req.user_id, gestionar_apuesta, lambda d: guardar_json(DB_PATH, d))
+    
     if req.eleccion not in juego.caballos:
         raise HTTPException(status_code=400, detail="Ese caballo no existe en el hipódromo")
 
@@ -148,6 +150,24 @@ def api_tragamonedas(req: DatosApuesta):
 
     juego = JuegoTragaMonedasAPI(usuarios, req.user_id, gestionar_apuesta, lambda d: guardar_json(DB_PATH, d))
     resultado = juego.ejecutar_logica(req.monto)
+    
+    if "error" in resultado:
+        raise HTTPException(status_code=400, detail=resultado["error"])
+        
+    return resultado
+
+"""--- ENDPOINT DE CHISTES ---"""
+
+@app.post("/gacha/chiste")
+def api_tirar_gacha(user_id: str):
+    """Endpoint para que Kaiji canjee chistes por 5 fichas"""
+    usuarios = cargar_json(DB_PATH)
+    
+    if user_id not in usuarios:
+        raise HTTPException(status_code=404, detail="Usuario no encontrado")
+    
+    gacha = GachaChistes(usuarios, user_id, lambda d: guardar_json(DB_PATH, d))
+    resultado = gacha.tirar_gacha()
     
     if "error" in resultado:
         raise HTTPException(status_code=400, detail=resultado["error"])
@@ -273,6 +293,7 @@ def listar_usuarios():
 # =====================================================
 # ENDPOINT: OBTENER SALDO
 # =====================================================
+
 class AgregarFichasRequest(BaseModel):
     user_id: str
     contrasena: str
