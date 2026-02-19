@@ -237,7 +237,11 @@
         "usuario": "Juan Test",
         "partidas": [
             {
+<<<<<<< HEAD
+                "fecha": "19/02/2026 11:03:37",
+=======
                 "fecha": "19/02/2026 13:28:30",
+>>>>>>> 09329133b09daee794b1a69abf425604683c3f8b
                 "juego": "banco",
                 "apuesta": 0,
                 "detalles": "Retiro de fondos bancarios",
@@ -247,7 +251,11 @@
                 "fichas_despues": 550
             },
             {
+<<<<<<< HEAD
+                "fecha": "19/02/2026 11:03:37",
+=======
                 "fecha": "19/02/2026 13:28:30",
+>>>>>>> 09329133b09daee794b1a69abf425604683c3f8b
                 "juego": "banco",
                 "apuesta": 0,
                 "detalles": "Retiro de fondos bancarios",
@@ -257,7 +265,11 @@
                 "fichas_despues": 450
             },
             {
+<<<<<<< HEAD
+                "fecha": "19/02/2026 11:03:37",
+=======
                 "fecha": "19/02/2026 13:28:30",
+>>>>>>> 09329133b09daee794b1a69abf425604683c3f8b
                 "juego": "banco",
                 "apuesta": 0,
                 "detalles": "Retiro de fondos bancarios",
@@ -267,7 +279,11 @@
                 "fichas_despues": 700
             },
             {
+<<<<<<< HEAD
+                "fecha": "19/02/2026 11:03:37",
+=======
                 "fecha": "19/02/2026 13:28:29",
+>>>>>>> 09329133b09daee794b1a69abf425604683c3f8b
                 "juego": "banco",
                 "apuesta": 0,
                 "detalles": "Retiro de fondos bancarios",
@@ -277,7 +293,11 @@
                 "fichas_despues": 550
             },
             {
+<<<<<<< HEAD
+                "fecha": "19/02/2026 11:03:37",
+=======
                 "fecha": "19/02/2026 13:28:29",
+>>>>>>> 09329133b09daee794b1a69abf425604683c3f8b
                 "juego": "banco",
                 "apuesta": 0,
                 "detalles": "Retiro de fondos bancarios",
@@ -349,6 +369,46 @@
             },
             {
                 "fecha": "19/02/2026 10:52:24",
+                "juego": "tragamonedas",
+                "apuesta": 10,
+                "detalles": "¡¡ENHORABUENA HAS GANADO!! Tres 7 seguidos.",
+                "resultado": "gano",
+                "ganancia": 890,
+                "fichas_antes": 100,
+                "fichas_despues": 990
+            }
+        ]
+    },
+    "6767": {
+        "usuario": "Kazuma Kiryu",
+        "partidas": [
+            {
+                "fecha": "19/02/2026 11:03:37",
+                "juego": "carreras",
+                "apuesta": 100,
+                "detalles": "Apostó por Secretariat. Ganador: Epona",
+                "resultado": "perdio",
+                "ganancia": -100,
+                "fichas_antes": 1000,
+                "fichas_despues": 900
+            }
+        ]
+    },
+    "6969": {
+        "usuario": "Kaiji Itou",
+        "partidas": [
+            {
+                "fecha": "19/02/2026 11:03:38",
+                "juego": "tragamonedas",
+                "apuesta": 10,
+                "detalles": "¡¡HAS PERDIDO LA MANUTENCION DE TUS HIJOS!!",
+                "resultado": "perdio",
+                "ganancia": -10,
+                "fichas_antes": 100,
+                "fichas_despues": 90
+            },
+            {
+                "fecha": "19/02/2026 11:03:38",
                 "juego": "tragamonedas",
                 "apuesta": 10,
                 "detalles": "¡¡ENHORABUENA HAS GANADO!! Tres 7 seguidos.",
