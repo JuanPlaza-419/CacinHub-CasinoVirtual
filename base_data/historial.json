@@ -58,7 +58,7 @@
         "usuario": "jacobo",
         "partidas": [
             {
-                "fecha": "11/02/2026 14:02:08",
+                "fecha": "12/02/2026 14:02:08",
                 "juego": "dados",
                 "apuesta": 10,
                 "detalles": "Sin detalles",
@@ -68,7 +68,7 @@
                 "fichas_despues": 1004180
             },
             {
-                "fecha": "11/02/2026 14:02:05",
+                "fecha": "12/02/2026 14:02:05",
                 "juego": "dados",
                 "apuesta": 10,
                 "detalles": "Sin detalles",
@@ -78,7 +78,7 @@
                 "fichas_despues": 1003890
             },
             {
-                "fecha": "11/02/2026 14:02:03",
+                "fecha": "12/02/2026 14:02:03",
                 "juego": "dados",
                 "apuesta": 10,
                 "detalles": "Sin detalles",
@@ -131,6 +131,61 @@
                 "ganancia": 100,
                 "fichas_antes": 100,
                 "fichas_despues": 200
+            }
+        ]
+    },
+    "7826": {
+        "usuario": "edisson",
+        "partidas": [
+            {
+                "fecha": "17/02/2026 13:36:37",
+                "juego": "carreras",
+                "apuesta": 30,
+                "detalles": "Aposto por Secretariat. Ganador: Tormenta China",
+                "resultado": "perdio",
+                "ganancia": 30,
+                "fichas_antes": 60,
+                "fichas_despues": 30
+            },
+            {
+                "fecha": "17/02/2026 13:36:16",
+                "juego": "dados",
+                "apuesta": 50,
+                "detalles": "Jugador: 4 vs Banca: 6",
+                "resultado": "perdio",
+                "ganancia": 50,
+                "fichas_antes": 110,
+                "fichas_despues": 60
+            },
+            {
+                "fecha": "17/02/2026 13:36:03",
+                "juego": "dados",
+                "apuesta": 10,
+                "detalles": "Empate tecnico",
+                "resultado": "empate",
+                "ganancia": 0,
+                "fichas_antes": 110,
+                "fichas_despues": 110
+            },
+            {
+                "fecha": "17/02/2026 13:35:35",
+                "juego": "dados",
+                "apuesta": 20,
+                "detalles": "Empate tecnico",
+                "resultado": "empate",
+                "ganancia": 0,
+                "fichas_antes": 110,
+                "fichas_despues": 110
+            },
+            {
+                "fecha": "16/02/2026 12:45:41",
+                "juego": "carreras",
+                "apuesta": 10,
+                "detalles": "Aposto por Tamamo Cross. Ganador: Secretariat",
+                "resultado": "perdio",
+                "ganancia": 10,
+                "fichas_antes": 120,
+                "fichas_despues": 110
             }
         ]
     }
