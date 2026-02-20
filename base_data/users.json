@@ -81,32 +81,4 @@
             "tragamonedas": 0,
             "carreras": 0
         }
-<<<<<<< HEAD
-=======
-    },
-<<<<<<< HEAD
-    "7826": {
-        "nombre": "edisson",
-        "contrasena": "1539",
-        "fecha_nacimiento": "07/07/1974",
-        "fichas": 30,
-        "fecha_registro": "16/02/2026 12:40:29",
-=======
-    "1398": {
-        "nombre": "dada",
-        "contrasena": "1234",
-        "fecha_nacimiento": "24/10/2000",
-        "fichas": 95,
-        "fecha_registro": "16/02/2026 12:13:59",
->>>>>>> 4dcd96e9a0e86df9b76c523a4177b8f2dcb1478e
-        "stats": {
-            "partidas_totales": 0,
-            "dados": 0,
-            "ruleta": 0,
-            "tragamonedas": 0,
-            "carreras": 0
->>>>>>> e26fcfd95a07f7ba10e6ca9d72f6ab60155a6d09
-        }
->>>>>>> 09329133b09daee794b1a69abf425604683c3f8b
     }
-}
