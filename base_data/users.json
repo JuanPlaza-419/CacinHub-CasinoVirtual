@@ -1,0 +1,44 @@
+{
+    "9512": {
+        "nombre": "manolito",
+        "contrasena": "123456789",
+        "fecha_nacimiento": "19/10/1999",
+        "fichas": 90,
+        "fecha_registro": "20/02/2026 11:34:10",
+        "stats": {
+            "partidas_totales": 2,
+            "dados": 0,
+            "ruleta": 0,
+            "tragamonedas": 2,
+            "carreras": 0
+        }
+    },
+    "9885": {
+        "nombre": "ManolitoPeter",
+        "contrasena": "123456789",
+        "fecha_nacimiento": "19/10/1999",
+        "fichas": 105,
+        "fecha_registro": "20/02/2026 11:59:43",
+        "stats": {
+            "partidas_totales": 2,
+            "dados": 1,
+            "ruleta": 0,
+            "tragamonedas": 1,
+            "carreras": 0
+        }
+    },
+    "2689": {
+        "nombre": "ManolitoPeter",
+        "contrasena": "123456789",
+        "fecha_nacimiento": "19/10/1999",
+        "fichas": 100,
+        "fecha_registro": "20/02/2026 11:59:46",
+        "stats": {
+            "partidas_totales": 0,
+            "dados": 0,
+            "ruleta": 0,
+            "tragamonedas": 0,
+            "carreras": 0
+        }
+    }
+}

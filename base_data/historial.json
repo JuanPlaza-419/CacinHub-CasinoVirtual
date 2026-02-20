@@ -1,0 +1,52 @@
+{
+    "9512": {
+        "usuario": "manolito",
+        "partidas": [
+            {
+                "fecha": "20/02/2026 11:35:50",
+                "juego": "tragamonedas",
+                "apuesta": 5,
+                "detalles": "¡¡HAS PERDIDO LA MANUTENCION DE TUS HIJOS!!",
+                "resultado": "perdio",
+                "ganancia": -5,
+                "fichas_antes": 95,
+                "fichas_despues": 90
+            },
+            {
+                "fecha": "20/02/2026 11:35:49",
+                "juego": "tragamonedas",
+                "apuesta": 5,
+                "detalles": "¡¡HAS PERDIDO LA MANUTENCION DE TUS HIJOS!!",
+                "resultado": "perdio",
+                "ganancia": -5,
+                "fichas_antes": 100,
+                "fichas_despues": 95
+            }
+        ]
+    },
+    "9885": {
+        "usuario": "ManolitoPeter",
+        "partidas": [
+            {
+                "fecha": "20/02/2026 12:01:52",
+                "juego": "tragamonedas",
+                "apuesta": 2,
+                "detalles": "¡¡HAS PERDIDO LA MANUTENCION DE TUS HIJOS!!",
+                "resultado": "perdio",
+                "ganancia": -2,
+                "fichas_antes": 112,
+                "fichas_despues": 110
+            },
+            {
+                "fecha": "20/02/2026 12:01:24",
+                "juego": "dados",
+                "apuesta": 12,
+                "detalles": "Jugador: 5 vs Banca: 2",
+                "resultado": "gano",
+                "ganancia": 12,
+                "fichas_antes": 100,
+                "fichas_despues": 112
+            }
+        ]
+    }
+}
