@@ -4,7 +4,7 @@ from typing import Optional, List
 import json
 import os
 
-# Importaciones de tus módulos de lógica
+# Importaciones de módulos de lógica
 from Funciones.historial import cargar_json, guardar_json, obtener_historial_usuario, registrar_partida
 from Funciones.funciones import gestionar_apuesta, Usuario, calcular_edad
 from Funciones.gacha import GachaChistes
@@ -21,7 +21,7 @@ app = FastAPI(
     version="2.0.0"
 )
 
-# RUTAS DE ARCHIVOS (CENTRALIZADAS)
+# RUTAS DE ARCHIVOS
 DB_PATH = "base_data/users.json"
 DB_PATH_HISTORIAL = "base_data/historial.json"
 
@@ -131,6 +131,18 @@ def api_carreras(req: DatosApuesta):
         raise HTTPException(400, detail="Ese caballo no existe")
 
     return juego.ejecutar_logica(req.monto, req.eleccion)
+
+@app.post("/jugar/ruleta")
+def api_ruleta(req: DatosApuestaRuleta):
+    usuarios = cargar_db_usuarios()
+    if req.user_id not in usuarios: raise HTTPException(404, "Usuario no encontrado")
+    if req.monto > usuarios[req.user_id]["fichas"]: raise HTTPException(400, "Fichas insuficientes")
+
+    juego = JuegoRuletaAPI(usuarios, req.user_id, gestionar_apuesta, guardar_db_usuarios)
+    if req.tipo_apuesta not in ["1", "2", "3"]:
+        raise HTTPException(400, detail="Tipo de apuesta inválido")
+    
+    return juego.ejecutar_logica(req.monto, req.tipo_apuesta, req.numero)
 
 @app.post("/gacha/chiste")
 def api_tirar_gacha(user_id: str):
