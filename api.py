@@ -57,7 +57,6 @@ def guardar_db_usuarios(datos):
     guardar_json(DB_PATH, datos)
 
 def cargar_db_historial():
-    # Usamos la misma utilidad de carga para el historial
     return cargar_json(DB_PATH_HISTORIAL)
 
 # --- ENDPOINTS DE GESTIÓN DE USUARIOS ---
@@ -80,7 +79,6 @@ def crear_usuario_endpoint(req: CrearUsuarioRequest):
 
     usuarios_db = cargar_db_usuarios()
     
-    # Intentar generar un usuario con ID único
     nuevo_user = Usuario(req.nombre.strip(), req.contrasena, req.fecha_nacimiento.strip())
     
     if nuevo_user.id in usuarios_db:

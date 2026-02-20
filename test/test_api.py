@@ -57,14 +57,12 @@ class TestEndpointsJuego:
 
     def test_gacha_exito(self, monkeypatch, un_usuario, sin_disco):
         usar_db(monkeypatch, un_usuario)
-        # Tu API usa user_id como query param: /gacha/chiste?user_id=...
         r = client.post("/gacha/chiste", params={"user_id": "USR001"})
         assert r.status_code in [200, 400] # 400 si no tiene fichas suf.
 
 class TestGestionUsuarios:
     def test_obtener_info_usuario(self, monkeypatch, un_usuario):
         usar_db(monkeypatch, un_usuario)
-        # Ajustado a tu ruta real /api/usuarios/{id}/info?contrasena=...
         r = client.get("/api/usuarios/USR001/info", params={"contrasena": "pass123"})
         assert r.status_code == 200
         assert r.json()["data"]["nombre"] == "Juan Test"
