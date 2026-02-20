@@ -1,5 +1,3 @@
-{
-<<<<<<< HEAD
     "6055": {
         "nombre": "Rompe-Aire",
         "contrasena": "tecno",
@@ -12,26 +10,6 @@
             "ruleta": 1,
             "tragamonedas": 0,
             "carreras": 2
-        }
-    },
-    "8865": {
-        "nombre": "Tanana",
-=======
-    "6969": {
-        "nombre": "Kaiji Itou",
->>>>>>> 09329133b09daee794b1a69abf425604683c3f8b
-        "contrasena": "1234",
-        "fichas": 90,
-        "stats": {
-<<<<<<< HEAD
-            "partidas_totales": 1,
-            "tragamonedas": 1
-=======
-            "partidas_totales": 2,
-            "dados": 1,
-            "ruleta": 0,
-            "tragamonedas": 0,
-            "carreras": 1
         }
     },
     "1245": {
