@@ -105,11 +105,9 @@ class TestUsuarios:
 class TestBanco:
     def test_agregar_fichas_usuario_inexistente(self, monkeypatch, sin_usuarios, sin_disco):
         usar_db(monkeypatch, sin_usuarios)
-        # Tu API lanza 401 si el usuario NO está en la DB o la pass está mal
         payload = {"user_id": "NO_EXISTE", "contrasena": "pass123", "cantidad": 100}
         r = client.post("/api/banco/agregar-fichas", json=payload)
         
-        # Cambiamos 404 por 401 para que coincida con tu api.py
         assert r.status_code == 401
         assert r.json()["detail"] == "Credenciales inválidas"
 
